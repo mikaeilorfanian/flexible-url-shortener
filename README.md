@@ -69,7 +69,8 @@ Now, let's analyze the weaknesses and strengths of this app.
 
 ###Strengths
 * Since we're not using any hashing algorithms, converting long URLs to short ones involves no calculations. This comes with a price of: we're using two tables and each request requires a `join` operation.
-* Again, due to lack of encoding or decoding algorithms, the code is easy to read and maintain.
+* Again, due to lack of encoding or decoding algorithms, the code is easy to read and maintain.  
+
 #Conclusion
 I wouldn't use this solution in a real production environment. Instead, I'd use a hashing algorithm which doesn't require combinations to be defined beforehand.  
 Also, I would consider using non-relational databases if the app has a real need for being scalable.  
