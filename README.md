@@ -65,7 +65,7 @@ Now, let's analyze the weaknesses and strengths of this app.
 ###Weaknesses
 * We put the combinations into a table in a relational database. If we were dealing with tens of millions of URLs, other options like  key-value databases like `redis` could be a better choice for this application. 
 * The choice of having `CHARSET` as a variable that can be change has bad consequences. It introduces dependencies in URL configurations. Also, it almost duplicates what `SHORT_URL_LENGTH_BOUND` does.
-* When we run out of unused combinations, we have to manually change `settings.py` add more combinations to the database.
+* When we run out of unused combinations, we have to manually change `settings.py` add more combinations to the database.  
 ###Strengths
 * Since we're not using any hashing algorithms, converting long URLs to short ones involves no calculations. This comes with a price of: we're using two tables and each request requires a `join` operation.
 * Again, due to lack of encoding or decoding algorithms, the code is easy to read and maintain.
