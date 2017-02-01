@@ -1,0 +1,4 @@
+<p>{{ url_obj.long_url }}</p>
+<p>Short URL: <a href="{% url 'short_url' url_obj.converted_url.combination %}"><b>{% url 'short_url' url_obj.converted_url.combination %}</b></a></p>
+<p>Count: {{ url_obj.visit_count }}</p>
+<p>Submitter: {{ url_obj.submitter.username }}</p>
